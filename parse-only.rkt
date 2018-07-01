@@ -2,7 +2,7 @@
 (require "tokenizer.rkt" "parser.rkt")
 
 ; This module defines a dialect for the secd language. It can be used with the lang line #lang secd/parse-only
-; and it will show the parse tree produced in the output.
+; and it will show the produced parse tree in the output.
 (define (read-syntax path port)
   (define parse-tree (parse path (make-tokenizer port path)))
   (strip-bindings

@@ -9,7 +9,7 @@
 
 (define secd-lexer
   (lexer-srcloc
-   [(:or whitespace "\n") (token lexeme #:skip? #t)] ; We are going to ignore whitespace and line-breaks.
+   [(:or whitespace "\n") (token lexeme #:skip? #t)] ; We are going to ignore whitespace and line-breaks. #:skip? #t tells the parser to ignore this token.
    [reserved-terms (token lexeme lexeme)]            ; Lexing the reserved terms is our top priority.
    [digits (token 'INTEGER (string->number lexeme))] ; An integer is the numeric value of a sequence of digits.
    ))
