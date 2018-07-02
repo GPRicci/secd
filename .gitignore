@@ -1,5 +1,16 @@
-/compiled
+#Compiled Racket code and backup files.
+compiled/*
 *.bak
-*.1
+
+# Commit message template.
 commsg
+
+# Assembler source files.
 *.s
+
+# Built documentation.
+scribblings/*.html
+scribblings/*.css
+scribblings/*.js
+scribblings/compiled/*
+doc/*
