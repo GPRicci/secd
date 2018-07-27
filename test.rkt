@@ -1,8 +1,12 @@
-#lang secd
+#lang secd/parse-only
 (
- (INT_CONST 5)
- (INT_CONST -25)
- (INT_CONST 10)
+ (INT_CONST 2)
+ (FUN
+  (IF0
+   ((INT_CONST 5))
+   ((INT_CONST 7)))
+  (RETURN))
+ (INT_CONST 0)
+ (APPLY)
  (ADD)
- (SUB)
  )
