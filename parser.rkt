@@ -6,9 +6,13 @@
 ; This grammar silently exports a parse function.
 ; As both secd-instruction and secd-identifier are preceded by an @ operator, the parser will never contain those nodes,
 ; therefore, our expander needs only provide bindings for the remaining rules.
-secd-program: /"(" secd-instruction* /")"
-@secd-instruction: /"(" secd-identifier /")"
-@secd-identifier: secd-int-const | secd-add | secd-sub
+secd-program: secd-instruction-list
+secd-instruction-list: /"(" secd-instruction* /")" 
+@secd-instruction: /"(" (secd-int-const | secd-add | secd-sub | secd-fun | secd-apply | secd-if0) /")"
 secd-int-const: /"INT_CONST" INTEGER
 secd-add: /"ADD"
 secd-sub: /"SUB"
+secd-fun: /"FUN" secd-instruction* /"(" secd-return /")"    ; Every function needs a return statement as its last instruction. This rule enforces that.
+secd-return: /"RETURN"
+secd-apply: /"APPLY"
+secd-if0: /"IF0" secd-instruction-list secd-instruction-list

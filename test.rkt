@@ -1,4 +1,4 @@
-#lang secd/tokenize-only
+#lang secd/parse-only
 (
  (INT_CONST 2)
  (FUN
