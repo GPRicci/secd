@@ -1,4 +1,4 @@
-#lang secd/parse-only
+#lang secd
 (
  (INT_CONST 2)
  (FUN
