@@ -134,7 +134,7 @@
   ; The value at the top of the stack is used as argument. We check if its value is 0 using TST.
   ; If its value is 0, then the Z flag will be set to 1, meaning that the EQ (Equal) condition is true.
   ; Otherwise, Z=0 and the condition NE (Not-Equal) is true.
-  ; So, is the value is not 0 we branch off to the label "ifnz<ident>", executing the instructions of the false branch. Otherwise the execution continues
+  ; So, if the value is not 0 we branch off to the label "ifnz<ident>", executing the instructions of the false branch. Otherwise the execution continues
   ; sequentially, executing the instruction of the true branch and then branches of to the "endifz<ident>" label.
   (string-append "ldmfd sp!, {r0}\n\ttst r0, r0\n\tbne ifnz" ifZIStr "\n\n\t"
                  trueInstructions

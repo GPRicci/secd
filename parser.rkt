@@ -4,7 +4,7 @@
 ; The / operator removes the following symbol from the parse tree.
 ; The @ operator removes the following rule from the parse tree and splices its children in its parent node.
 ; This grammar silently exports a parse function.
-; As both secd-instruction and secd-identifier are preceded by an @ operator, the parser will never contain those nodes,
+; As secd-instruction is preceded by an @ operator, the parser will never contain this node,
 ; therefore, our expander needs only provide bindings for the remaining rules.
 secd-program: secd-instruction-list
 secd-instruction-list: /"(" secd-instruction* /")" 
