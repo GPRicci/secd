@@ -131,6 +131,7 @@
 ; This function binds the secd-if0 identifier.
 (define (secd-if0 trueInstructions falseInstructions)
   (define ifZIStr (number->string ifZIdent))
+  (set! ifZIdent (+ ifZIdent 1)) ; Increment identifier after.
   ; The value at the top of the stack is used as argument. We check if its value is 0 using TST.
   ; If its value is 0, then the Z flag will be set to 1, meaning that the EQ (Equal) condition is true.
   ; Otherwise, Z=0 and the condition NE (Not-Equal) is true.
